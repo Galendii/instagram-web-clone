@@ -30,13 +30,10 @@ export default function Stories() {
       )
     );
   }, []);
-  useEffect(() => {
-    console.log(scroll);
-  }, [scroll]);
+
   return (
     <Container id="container" onScroll={handleScroll}>
       {scroll !== 0 && <ArrowBack onClick={scrollBack} />}
-      {console.log(scrollBarWidth)}
       <ScrollBar id="story">
         <AvatarHolder>
           <Avatar />
