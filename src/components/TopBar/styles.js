@@ -8,11 +8,13 @@ import {
 } from "react-icons/ai";
 
 export const Container = styled.div`
+  position: fixed;
   width: 100%;
   height: 54px;
   display: flex;
   align-items: center;
   background: var(--primary);
+  z-index: 3;
 `;
 export const ContentHolder = styled.div`
   display: flex;
@@ -21,7 +23,7 @@ export const ContentHolder = styled.div`
   width: 100%;
   height: 36px;
   max-width: 935px;
-  padding: 0 20px;
+  padding: 7px 20px;
   margin: 0 auto;
 `;
 export const LogoHolder = styled.div`

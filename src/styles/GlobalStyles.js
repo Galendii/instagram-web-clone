@@ -2,11 +2,13 @@ const { createGlobalStyle } = require("styled-components");
 
 const GlobalStyle = createGlobalStyle`
 
+
     body{
         margin: 0;
         width: 100vh;
         height: 100vh;
-
+        overflow-x:hidden;
+        overflow-y:auto;
     }
     span{
         color: var(--dark);
