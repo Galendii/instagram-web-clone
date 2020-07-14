@@ -29,7 +29,6 @@ export default function Stories() {
         document.getElementById("story").scrollWidth - $("#story").width()
       )
     );
-    console.log(scrollBarWidth);
   }, []);
   useEffect(() => {
     console.log(scroll);
@@ -52,7 +51,7 @@ export default function Stories() {
           <span>Username</span>
         </AvatarHolder>
         <AvatarHolder>
-          <Avatar />
+          <Avatar className="best" />
           <span>Username</span>
         </AvatarHolder>
         <AvatarHolder>
@@ -60,7 +59,7 @@ export default function Stories() {
           <span>Username</span>
         </AvatarHolder>
         <AvatarHolder>
-          <Avatar />
+          <Avatar className="best" />
           <span>Username</span>
         </AvatarHolder>
         <AvatarHolder>

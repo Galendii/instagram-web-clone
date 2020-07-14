@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { MdSearch, MdCancel, MdHome } from "react-icons/md";
+import { MdSearch, MdCancel } from "react-icons/md";
 import { FiSend } from "react-icons/fi";
 import {
   AiOutlineCompass,
