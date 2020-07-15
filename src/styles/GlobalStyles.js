@@ -5,8 +5,8 @@ const GlobalStyle = createGlobalStyle`
 
     body{
         margin: 0;
-        width: 100vh;
-        height: 100vh;
+        width: 100%;
+        height: 100%;
         overflow-x:hidden;
         overflow-y:auto;
         color: var(--dark);
