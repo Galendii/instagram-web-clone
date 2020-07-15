@@ -136,7 +136,9 @@ export const HomeIcon = styled(AiOutlineHome)`
   ${iconCss}
 `;
 export const DirectIcon = styled(FiSend)`
-  ${iconCss}
+  width: 29px;
+  height: 29px;
+  fill: var(--primary);
 `;
 export const CompassIcon = styled(AiOutlineCompass)`
   ${iconCss}

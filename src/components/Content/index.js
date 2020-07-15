@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import $ from "jquery";
 import {
   Container,
   Header,
@@ -21,6 +22,26 @@ import {
 } from "./styles";
 
 export default function Content() {
+  const [shrink, setShrink] = useState(false);
+  const [showComments, setShowComments] = useState(false);
+  const [smallDesc, setSmallDesc] = useState("");
+  const description = `Lorem ipsum dolor sit amet, consetetur
+  sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+  dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+  et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+  takimata sanctus est Lorem ipsum dolor sit amet.`;
+
+  const descriptionShow = () => {
+    if (description.length > 180) {
+      setSmallDesc(description.substr(0, 180) + "...");
+      setShrink(true);
+    }
+  };
+
+  useEffect(() => {
+    descriptionShow();
+  }, []);
+
   return (
     <Container>
       <Header>
@@ -46,14 +67,18 @@ export default function Content() {
         </span>
       </LikesHolder>
       <Comments>
-        <Description>
-          <strong>username</strong> Lorem ipsum dolor sit amet, consetetur
-          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-          et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-          takimata sanctus est Lorem ipsum dolor sit amet. <span>mais</span>
+        <Description className="description">
+          <strong>username</strong>
+          {shrink ? smallDesc : description}
+          <span onClick={() => setShrink(!shrink)}>
+            {shrink ? " mais" : " menos"}
+          </span>
         </Description>
-        <AllComments>Ver todos os 30 comentários</AllComments>
+        <AllComments onClick={() => setShowComments(!showComments)}>
+          {!showComments
+            ? "Ver todos os 30 comentários"
+            : "Ocultar comentários"}
+        </AllComments>
         <UserComment>
           <strong>username</strong>Lorem ipsum dolor sit amet, consetetur
           sadipscing elitr! <SmallLikeIcon />
@@ -63,6 +88,28 @@ export default function Content() {
           sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
           dolore magna aliquyam erat, sed diam voluptua. <SmallLikeIcon />
         </UserComment>
+        {showComments && (
+          <>
+            <UserComment>
+              <strong>username</strong>Lorem ipsum dolor sit amet, consetetur
+              sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+              et dolore magna aliquyam erat, sed diam voluptua.{" "}
+              <SmallLikeIcon />
+            </UserComment>
+            <UserComment>
+              <strong>username</strong>Lorem ipsum dolor sit amet, consetetur
+              sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+              et dolore magna aliquyam erat, sed diam voluptua.{" "}
+              <SmallLikeIcon />
+            </UserComment>
+            <UserComment>
+              <strong>username</strong>Lorem ipsum dolor sit amet, consetetur
+              sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+              et dolore magna aliquyam erat, sed diam voluptua.{" "}
+              <SmallLikeIcon />
+            </UserComment>
+          </>
+        )}
       </Comments>
     </Container>
   );

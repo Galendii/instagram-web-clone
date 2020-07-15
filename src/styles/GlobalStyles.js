@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
         height: 100vh;
         overflow-x:hidden;
         overflow-y:auto;
+        color: var(--dark);
     }
     span{
         color: var(--dark);

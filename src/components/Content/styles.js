@@ -27,6 +27,7 @@ export const Avatar = styled.div`
 export const TextHolder = styled.div`
   display: flex;
   flex-direction: column;
+
   > span {
     font-size: 14px;
     font-weight: bold;
@@ -56,17 +57,43 @@ export const Reactions = styled.div`
     right: 20px;
   }
 `;
-export const LikesHolder = styled.div``;
-export const SmallAvatar = styled.div``;
-export const Comments = styled.div``;
-export const Description = styled.div``;
-export const AllComments = styled.div``;
+export const LikesHolder = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 4px 10px;
+`;
+export const SmallAvatar = styled.div`
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+  background: var(--gray);
+  margin-right: 10px;
+`;
+export const Comments = styled.div`
+  padding: 0px 4px 10px 10px;
+`;
+export const Description = styled.div`
+  > strong {
+    margin-right: 4px;
+  }
+
+  > span {
+    cursor: pointer;
+    color: var(--gray);
+  }
+`;
+export const AllComments = styled.div`
+  padding: 4px 0px 2px 0px;
+  color: gray;
+  cursor: pointer;
+`;
 export const UserComment = styled.div`
   > strong {
     margin-right: 4px;
   }
   position: relative;
-  padding: 3px 24px 3px 4px;
+  padding: 3px 24px 3px 0px;
 `;
 
 // Icons
