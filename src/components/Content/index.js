@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import $ from "jquery";
 import {
   Container,
   Header,
@@ -40,7 +39,7 @@ export default function Content() {
 
   useEffect(() => {
     descriptionShow();
-  }, []);
+  });
 
   return (
     <Container>
