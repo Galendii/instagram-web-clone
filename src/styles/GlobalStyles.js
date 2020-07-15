@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
         overflow-x:hidden;
         overflow-y:auto;
         color: var(--dark);
+        font-family:apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     }
     span{
         color: var(--dark);

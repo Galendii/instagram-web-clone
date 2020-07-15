@@ -75,9 +75,7 @@ export default function Content() {
           </span>
         </Description>
         <AllComments onClick={() => setShowComments(!showComments)}>
-          {!showComments
-            ? "Ver todos os 30 comentários"
-            : "Ocultar comentários"}
+          {!showComments ? "Ver todos os comentários" : "Ocultar comentários"}
         </AllComments>
         <UserComment>
           <strong>username</strong>Lorem ipsum dolor sit amet, consetetur
